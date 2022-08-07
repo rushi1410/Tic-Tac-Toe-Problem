@@ -41,7 +41,7 @@ public class TicTacToeGame {
 	}
 
 	public static void userMove() {
-
+		
 		System.out.println("\nPlayer Is Playing");
 		System.out.println("\nEnter Location 1-9 to Make Move");
 
@@ -65,10 +65,111 @@ public class TicTacToeGame {
 		System.out.println("\nComputer Is Playing");
 		do {
 			playLocation = randomGenerator.nextInt(9) + 1;
+			if(predictWinLocation()) {
+			}
 		} while (!isEmpty(playLocation));
-
 		board[playLocation] = computer;
 		showBoard();
+	}
+	
+	public static boolean predictWinLocation() {
+		if (board[1] == computer && board[2] == computer && board[3] == ' ') {
+			playLocation = 3;
+			return true;
+		}
+		if (board[1] == computer && board[3] == computer && board[2] == ' ') {
+			playLocation = 2;
+			return true;
+		}
+		if (board[3] == computer && board[2] == computer && board[1] == ' ') {
+			playLocation = 1;
+			return true;
+		}
+		if (board[4] == computer && board[5] == computer && board[6] == ' ') {
+			playLocation = 6;
+			return true;
+		}
+		if (board[4] == computer && board[6] == computer && board[5] == ' ') {
+			playLocation = 5;
+			return true;
+		}
+		if (board[6] == computer && board[5] == computer && board[4] == ' ') {
+			playLocation = 4;
+			return true;
+		}
+		if (board[7] == computer && board[8] == computer && board[9] == ' ') {
+			playLocation = 9;
+			return true;
+		}
+		if (board[7] == computer && board[9] == computer && board[8] == ' ') {
+			playLocation = 8;
+			return true;
+		}
+		if (board[9] == computer && board[8] == computer && board[7] == ' ') {
+			playLocation = 7;
+			return true;
+		}
+		if (board[1] == computer && board[4] == computer && board[7] == ' ') {
+			playLocation = 7;
+			return true;
+		}
+		if (board[1] == computer && board[7] == computer && board[4] == ' ') {
+			playLocation = 4;
+			return true;
+		}
+		if (board[7] == computer && board[4] == computer && board[1] == ' ') {
+			playLocation = 1;
+			return true;
+		}
+		if (board[2] == computer && board[5] == computer && board[8] == ' ') {
+			playLocation = 8;
+			return true;
+		}
+		if (board[2] == computer && board[8] == computer && board[5] == ' ') {
+			playLocation = 5;
+			return true;
+		}
+		if (board[8] == computer && board[5] == computer && board[2] == ' ') {
+			playLocation = 2;
+			return true;
+		}
+		if (board[3] == computer && board[6] == computer && board[9] == ' ') {
+			playLocation = 9;
+			return true;
+		}
+		if (board[3] == computer && board[9] == computer && board[6] == ' ') {
+			playLocation = 6;
+			return true;
+		}
+		if (board[9] == computer && board[6] == computer && board[3] == ' ') {
+			playLocation = 3;
+			return true;
+		}
+		if (board[1] == computer && board[5] == computer && board[9] == ' ') {
+			playLocation = 9;
+			return true;
+		}
+		if (board[1] == computer && board[9] == computer && board[5] == ' ') {
+			playLocation = 5;
+			return true;
+		}
+		if (board[9] == computer && board[5] == computer && board[1] == ' ') {
+			playLocation = 1;
+			return true;
+		}
+		if (board[3] == computer && board[5] == computer && board[7] == ' ') {
+			playLocation = 7;
+			return true;
+		}
+		if (board[3] == computer && board[7] == computer && board[5] == ' ') {
+			playLocation = 5;
+			return true;
+		}
+		if (board[7] == computer && board[5] == computer && board[3] == ' ') {
+			playLocation = 3;
+			return true;
+		} else
+			return false;
 	}
 
 	public static boolean isEmpty(int location) {
@@ -147,10 +248,10 @@ public class TicTacToeGame {
 			System.out.println("Game TIED.");
 
 	}
-
+	
 	public static void main(String[] args) {
 
-		System.out.println("Welcome To Tic Tac Toe Game");
+		System.out.println("Welcome To Tic Tac Toe Game ");
 		createBoard();
 		getPlayerChoice();
 		checkToss();
