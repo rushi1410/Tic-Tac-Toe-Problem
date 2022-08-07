@@ -376,13 +376,14 @@ public class TicTacToeGame {
 			}
 		} while (!checkWinner() && !checkBoardFull());
 		if (checkBoardFull() && !checkWinner())
-			System.out.println("Game TIED.");
+			System.out.println("Board is FULL! Game TIED.");
 
 	}
 	
+	
 	public static void main(String[] args) {
 
-		System.out.println("Welcome To The Game Of Tic Tac Toe");
+		System.out.println("Welcome To Tic Tac Toe Game");
 		createBoard();
 		getPlayerChoice();
 		checkToss();
